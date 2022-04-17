@@ -1,0 +1,10 @@
+
+<div class="dropdown book">
+<select class="justify-content-center btn btn-secondary dropdown-toggle" name="" id="" (change)="onChangeGenre($event)">
+    <option class="dropdown-menu" value="-1" disabled selected hidden>Genre:</option>
+    <option  *ngFor="let genre of genres"  [value]="genre">{{genre}}</option>
+</select>
+
+<app-book *ngFor="let book of books$ | async  | filterGenre:genre" [book]="book" [page]="page" >
+</app-book>
+</div>
